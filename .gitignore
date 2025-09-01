@@ -1,0 +1,21 @@
+# Unity generated files
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Aa]ssets/Plugins/Editor/JetBrains*
+/Assets/StreamingAssets.meta
+
+# Unity user settings
+/[Uu]ser[Ss]ettings/
+
+# Visual Studio / VSCode files
+*.csproj
+*.sln
+.vs/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
