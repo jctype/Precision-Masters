@@ -62,6 +62,16 @@ public class BallisticsManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"WindManager assigned: {windManager != null}");
+        if (windManager != null)
+        {
+            Debug.Log($"WindManager config: {windManager.config != null}");
+            if (windManager.config != null)
+            {
+                Debug.Log($"Wind speed: {windManager.config.windSpeed}");
+            }
+        }
+
         // Find and cache HitPlane references
         GameObject hitPlaneObj = GameObject.FindGameObjectWithTag("HitPlane");
         if (hitPlaneObj != null)
@@ -171,6 +181,7 @@ public class BallisticsManager : MonoBehaviour
             // (windManager can also be externally advanced — we choose simple local determinism)
         }
 
+        int logCounter = 0;
         while (timer < lifetime)
         {
             Vector3 prevPos = position;
@@ -182,6 +193,15 @@ public class BallisticsManager : MonoBehaviour
             if (windManager != null)
             {
                 wind = windManager.SampleWind(position, simTime);
+                if (logCounter % 10 == 0) // Log every 10 steps to avoid spam
+                {
+                    Debug.Log($"Wind at {position}: {wind}, simTime: {simTime}");
+                }
+                logCounter++;
+            }
+            else
+            {
+                Debug.LogError("WindManager is null!");
             }
 
             // Compute aerodynamic drag based on relative airspeed (v_rel = bullet - wind)
@@ -214,6 +234,11 @@ public class BallisticsManager : MonoBehaviour
             // Integrate (semi-implicit Euler)
             velocity += (gravityAcc + dragAcc) * timeStep;
             position += velocity * timeStep;
+
+            if (logCounter % 10 == 0)
+            {
+                Debug.Log($"dragAcc: {dragAcc}, velocity: {velocity}, position: {position}");
+            }
 
             // Collision check
             Vector3 dir = (position - prevPos);
