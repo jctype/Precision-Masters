@@ -1,3 +1,5 @@
+# Auto detect text files and perform LF normalization
+* text=auto
 Assets/ALP_Assets/Realistic[[:space:]]Terrain[[:space:]]Textures[[:space:]]Lite/Textures/*.tif filter=lfs diff=lfs merge=lfs -text
 Assets/ALP_Assets/Realistic[[:space:]]Terrain[[:space:]]Textures[[:space:]]Lite/Textures/*.png filter=lfs diff=lfs merge=lfs -text
 Assets/ALP_Assets/Realistic[[:space:]]Terrain[[:space:]]Textures[[:space:]]Lite/Scenes/TerrainDATA/*.asset filter=lfs diff=lfs merge=lfs -text
