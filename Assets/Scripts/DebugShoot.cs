@@ -21,7 +21,10 @@ public class DebugShoot : MonoBehaviour
         {
             // Fire in the direction the camera is facing
             Vector3 direction = Camera.main.transform.forward;
-            ballisticsManager.FireBullet(direction);
+            Vector3 startPos = transform.position; // Assuming the start position is the current position of the DebugShoot object
+            Vector3 startVel = direction * 10f; // Assuming the start velocity is 10 units in the direction of the camera
+
+            ballisticsManager.FireBullet(startPos, startVel);
         }
     }
 }

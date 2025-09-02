@@ -22,6 +22,11 @@ public class BallisticsManager : MonoBehaviour
 
     private List<GameObject> spawnedMarkers = new List<GameObject>();
 
+    void Start()
+    {
+        hitPlaneTransform = GameObject.Find("HitPlane").transform;
+    }
+
     public void ClearMarkers()
     {
         foreach (var marker in spawnedMarkers)
@@ -31,7 +36,7 @@ public class BallisticsManager : MonoBehaviour
         spawnedMarkers.Clear();
     }
 
-    public void SimulateBullet(Vector3 startPos, Vector3 startVel)
+    public void FireBullet(Vector3 startPos, Vector3 startVel)
     {
         Vector3 pos = startPos;
         Vector3 velocity = startVel;

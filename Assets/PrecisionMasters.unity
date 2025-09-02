@@ -1069,30 +1069,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a85f2243c8d1224da4417372abe1eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletData: {fileID: 11400000, guid: fcfe688d1574e8d46b308f0779363974, type: 2}
-  firePoint: {fileID: 1184412713}
-  gravity: 9.81
-  fallbackBulletMass: 0.02
-  fallbackDragCoefficient: 0.295
-  fallbackCrossSection: 0.000046
-  airDensity: 1.225
-  windManager: {fileID: 0}
-  advanceWindSimTime: 1
-  fixedSimStep: 0.02
-  hitEffect: {fileID: 1301697207402410478, guid: 39f852c28f9c3fd45a427c24f3564ba7,
-    type: 3}
-  missEffect: {fileID: 970440554703164915, guid: 47096eff328e11a418ace7db2d72aa97,
-    type: 3}
-  hitBoardPanel: {fileID: 677250854}
+  windManager: {fileID: 763101392}
+  hitPlaneTransform: {fileID: 0}
+  hitPanel: {fileID: 0}
   hitMarkerPrefab: {fileID: 5866336066692160078, guid: b0fce0194fcfc6e4dafb9b466457ca5a,
     type: 3}
-  nearMissMarkerPrefab: {fileID: 6353429961636289024, guid: 37ad5a2046afcd549b5dd5d8e0d4d156,
-    type: 3}
-  missMarkerPrefab: {fileID: 2628362444940536582, guid: a381814ceed0a1146b226fe451f5c371,
-    type: 3}
-  hitMask:
-    serializedVersion: 2
-    m_Bits: 51
+  dragCoefficient: 0.05
+  simulationStep: 0.02
+  maxSimulationTime: 5
+  nearMissColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  edgeHitColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &703031470 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
@@ -1131,7 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72301cee1d4171a42ad00f122c4a5485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 0}
+  config: {fileID: 11400000, guid: 9a471b44ccefc5d45bc8e276ce20ef08, type: 2}
   simTimeStep: 0.02
 --- !u!1 &719214459
 GameObject:
@@ -1554,28 +1541,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a85f2243c8d1224da4417372abe1eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletData: {fileID: 11400000, guid: fcfe688d1574e8d46b308f0779363974, type: 2}
-  firePoint: {fileID: 1184412713}
-  gravity: 9.81
-  fallbackBulletMass: 0.02
-  fallbackDragCoefficient: 0.295
-  fallbackCrossSection: 0.000046
-  airDensity: 1.225
   windManager: {fileID: 763101392}
-  advanceWindSimTime: 1
-  fixedSimStep: 0.02
-  hitEffect: {fileID: 0}
-  missEffect: {fileID: 0}
-  hitBoardPanel: {fileID: 677250854}
+  hitPlaneTransform: {fileID: 719214460}
+  hitPanel: {fileID: 677250854}
   hitMarkerPrefab: {fileID: 5866336066692160078, guid: b0fce0194fcfc6e4dafb9b466457ca5a,
     type: 3}
-  nearMissMarkerPrefab: {fileID: 6353429961636289024, guid: 37ad5a2046afcd549b5dd5d8e0d4d156,
-    type: 3}
-  missMarkerPrefab: {fileID: 2628362444940536582, guid: a381814ceed0a1146b226fe451f5c371,
-    type: 3}
-  hitMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  dragCoefficient: 0.05
+  simulationStep: 0.02
+  maxSimulationTime: 5
+  nearMissColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  edgeHitColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &1035606783
 Transform:
   m_ObjectHideFlags: 0
